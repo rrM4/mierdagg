@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar Sesión - Biblioteca</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="auth-card">
+        <h2 class="auth-card__title">Bienvenido</h2>
+
+        <form class="form">
+            <div class="form__group">
+                <label for="login-matricula" class="form__label">Matrícula</label>
+                <p id="error-matricula" class="form__error"></p>
+                <input type="text" id="login-matricula" class="form__input" placeholder="Ej. A00123456">
+            </div>
+
+            <div class="form__group">
+                <label for="login-password" class="form__label">Contraseña</label>
+                <p id="error-password" class="form__error"></p>
+                <input type="password" id="login-password" class="form__input" placeholder="********">
+            </div>
+
+            <p id="error-general" class="form__error" style="text-align: center; margin-top: 10px;"></p>
+
+            <button type="submit" id="btn-login-submit" class="form__btn">Iniciar Sesión</button>
+        </form>
+        <div class="form__footer">
+            <p>¿No tienes cuenta? <a href="./views/registro.html" class="form__link">Regístrate aquí</a></p>
+        </div>
+        </div>
+    <script src="./scripts/index.js"></script>
+</body>
+</html>

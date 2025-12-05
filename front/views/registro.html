@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro - Biblioteca</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="auth-card">
+        <h2 class="auth-card__title">Crear Cuenta</h2>
+
+        <form class="form">
+            <div class="form__group">
+                <label for="reg-nombre" class="form__label">Nombre</label>
+                <p id="error-nombre" class="form__error"></p>
+                <input type="text" id="reg-nombre" class="form__input">
+            </div>
+
+            <div class="form__group">
+                <label for="reg-apellido" class="form__label">Apellido</label>
+                <p id="error-apellido" class="form__error"></p>
+                <input type="text" id="reg-apellido" class="form__input">
+            </div>
+
+            <div class="form__group">
+                <label for="reg-matricula" class="form__label">Matrícula</label>
+                <p id="error-matricula" class="form__error"></p>
+                <input type="text" id="reg-matricula" class="form__input">
+            </div>
+
+            <div class="form__group">
+                <label for="reg-password" class="form__label">Contraseña</label>
+                <p id="error-password" class="form__error"></p>
+                <input type="password" id="reg-password" class="form__input">
+            </div>
+
+            <div class="form__group">
+                <label for="reg-confirm" class="form__label">Confirmar Contraseña</label>
+                <p id="error-confirm" class="form__error"></p>
+                <input type="password" id="reg-confirm" class="form__input">
+            </div>
+
+             <p id="error-general" class="form__error" style="text-align: center; margin-top: 10px;"></p>
+
+            <button type="submit" id="btn-register-submit" class="form__btn">Registrarse</button>
+        </form>
+    <p>¿Ya tienes cuenta? <a href="../index.html" class="form__link">Inicia Sesión</a></p>
+    </div>
+    <script src="../scripts/registro.js"></script>
+</body>
+</html>

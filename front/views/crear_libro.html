@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Libro</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="auth-card">
+        <h2 class="auth-card__title">Registrar Nuevo Libro</h2>
+        <form class="form">
+            <div class="form__group">
+                <label class="form__label">Título</label>
+                <p id="error-titulo" class="form__error"></p>
+                <input type="text" id="titulo" class="form__input">
+            </div>
+            <div class="form__group">
+                <label class="form__label">Autor</label>
+                <p id="error-autor" class="form__error"></p>
+                <input type="text" id="autor" class="form__input">
+            </div>
+            <div class="form__group">
+                <label class="form__label">Categoría</label>
+                <p id="error-categoria" class="form__error"></p>
+                <input type="text" id="categoria" class="form__input">
+            </div>
+            <div class="form__group">
+                <label class="form__label">Año de Publicación</label>
+                <p id="error-anio" class="form__error"></p>
+                <input type="number" id="anio" class="form__input">
+            </div>
+
+            <button type="submit" id="btn-crear" class="form__btn">Guardar Libro</button>
+            <a href="dashboard.html" class="form__btn" style="background-color: #666; text-align: center; margin-top: 10px; display:block;">Cancelar</a>
+        </form>
+    </div>
+    <script src="../scripts/crear_libro.js"></script>
+</body>
+</html>

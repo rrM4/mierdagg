@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Libro</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="auth-card">
+        <h2 class="auth-card__title">Editar Libro</h2>
+        <form class="form">
+            <input type="hidden" id="libro-id"> <div class="form__group">
+                <label class="form__label">Título</label>
+                <p id="error-titulo" class="form__error"></p>
+                <input type="text" id="titulo" class="form__input">
+            </div>
+            <div class="form__group">
+                <label class="form__label">Autor</label>
+                <p id="error-autor" class="form__error"></p>
+                <input type="text" id="autor" class="form__input">
+            </div>
+            <div class="form__group">
+                <label class="form__label">Categoría</label>
+                <p id="error-categoria" class="form__error"></p>
+                <input type="text" id="categoria" class="form__input">
+            </div>
+            <div class="form__group">
+                <label class="form__label">Año</label>
+                <p id="error-anio" class="form__error"></p>
+                <input type="number" id="anio" class="form__input">
+            </div>
+
+            <div class="form__group">
+                <label class="form__label">Estado</label>
+                <select id="disponible" class="form__input">
+                    <option value="true">Disponible</option>
+                    <option value="false">En Préstamo / No Disponible</option>
+                </select>
+            </div>
+
+            <button type="submit" id="btn-guardar" class="form__btn">Guardar Cambios</button>
+            <a href="dashboard.html" class="form__btn" style="background-color: #666; text-align: center; margin-top: 10px; display:block;">Cancelar</a>
+        </form>
+    </div>
+    <script src="../scripts/editar_libro.js"></script>
+</body>
+</html>

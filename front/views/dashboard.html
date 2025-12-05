@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo - Biblioteca</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="dashboard">
+
+        <header class="dashboard__header">
+            <h3>Biblioteca Universitaria</h3>
+            <a href="crear_libro.html" class="form__btn" style="width: auto; padding: 10px 20px; background-color: #388e3c; text-decoration: none;">+ Nuevo Libro</a>
+            <div class="search-bar">
+                <input type="text" id="search-input" class="search-bar__input" placeholder="Buscar por título, autor o categoría...">
+                <button id="search-btn" class="search-bar__btn">Buscar</button>
+            </div>
+
+            <a href="login.html" id="btn-logout" class="form__link">Cerrar Sesión</a>
+        </header>
+
+        <h2 style="margin-bottom: 20px; color: var(--color-primary-dark);">Catálogo de Libros</h2>
+
+        <div class="book-grid" id="books-container">
+            <div class="book-card">
+                <div>
+                    <h3 class="book-card__title">Cargando libros...</h3>
+                    <p class="book-card__info">Conectando con el servidor</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../scripts/dashboard.js"></script>
+</body>
+</html>

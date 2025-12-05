@@ -1,0 +1,228 @@
+/* VARIABLES & RESET */
+:root {
+    --color-primary: #8d6e63;       /* Tono café de la imagen */
+    --color-primary-dark: #5d4037;
+    --color-bg: #f4ece4;            /* Fondo crema suave */
+    --color-white: #ffffff;
+    --color-text: #3e2723;
+    --color-error: #d32f2f;
+    --color-success: #388e3c;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --border-radius: 8px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* --- CLASES GENERALES (UTILITIES) --- */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: var(--spacing-md);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* --- COMPONENTE: CARD (Contenedor de formularios) --- */
+.auth-card {
+    background-color: var(--color-white);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(62, 39, 35, 0.1);
+    width: 100%;
+    max-width: 450px;
+    margin: auto;
+}
+
+.auth-card__title {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    font-size: 2rem;
+    color: var(--color-primary-dark);
+}
+
+/* --- COMPONENTE: FORMULARIO --- */
+.form__group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form__label {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+}
+
+.form__input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form__input:focus {
+    border-color: var(--color-primary);
+}
+
+.form__btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-top: var(--spacing-sm);
+}
+
+.form__btn:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.form__footer {
+    text-align: center;
+    margin-top: var(--spacing-md);
+    font-size: 0.9rem;
+}
+
+.form__link {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.form__error {
+    color: var(--color-error); /* Rojo definido en tus variables */
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    display: none; /* Oculto por defecto */
+}
+
+/* Clase auxiliar para mostrar el error */
+.form__error--active {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+
+/* --- COMPONENTE: DASHBOARD (Vista Principal) --- */
+.dashboard {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.dashboard__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    background-color: var(--color-white);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+}
+
+/* --- COMPONENTE: SEARCH BAR --- */
+.search-bar {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-grow: 1;
+    max-width: 600px;
+}
+
+.search-bar__input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+}
+
+.search-bar__btn {
+    padding: 10px 20px;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+/* --- COMPONENTE: BOOK GRID --- */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+}
+
+/* --- COMPONENTE: BOOK CARD --- */
+.book-card {
+    background-color: var(--color-white);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.book-card__title {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary-dark);
+}
+
+.book-card__info {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.book-card__status {
+    margin-top: var(--spacing-sm);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.book-card__status--available {
+    color: var(--color-success);
+}
+
+.book-card__status--borrowed {
+    color: var(--color-error);
+}
+
+.book-card__action {
+    margin-top: var(--spacing-md);
+    padding: 8px;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+.book-card__action:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
