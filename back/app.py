@@ -91,13 +91,37 @@ def check_session():
 @app.route('/api/register', methods=['POST'])
 def register():
     data = request.get_json()
-    if Usuario.query.filter_by(matricula=data.get('matricula')).first():
+
+    # 1. Validation
+    nombre = data.get('nombre')
+    apellido = data.get('apellido')
+    matricula = data.get('matricula')
+    password = data.get('password')
+
+    if not all([nombre, apellido, matricula, password]):
+        return jsonify({"success": False, "message": "Faltan datos obligatorios"}), 400
+
+    if Usuario.query.filter_by(matricula=matricula).first():
         return jsonify({"success": False, "message": "Matrícula ya existe"}), 400
-    nuevo = Usuario(nombre=data.get('nombre'), apellido=data.get('apellido'), matricula=data.get('matricula'),
-                    password=data.get('password'))
-    db.session.add(nuevo)
-    db.session.commit()
-    return jsonify({"success": True}), 201
+
+    # 2. Create User with Default Role
+    nuevo = Usuario(
+        nombre=nombre,
+        apellido=apellido,
+        matricula=matricula,
+        password=password,
+        rol='usuario'  # Default role
+    )
+
+    # 3. DB Commit with Error Handling
+    try:
+        db.session.add(nuevo)
+        db.session.commit()
+        return jsonify({"success": True}), 201
+    except Exception as e:
+        db.session.rollback()
+        print(f"Error registrando usuario: {e}") # Log to console
+        return jsonify({"success": False, "message": f"Error interno: {str(e)}"}), 500
 
 
 @app.route('/api/libros', methods=['GET'])
