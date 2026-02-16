@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Editar Libro</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
+
 <body>
     <div class="auth-card">
         <h2 class="auth-card__title">Editar Libro</h2>
         <form class="form">
-            <input type="hidden" id="libro-id"> <div class="form__group">
+            <input type="hidden" id="libro-id">
+            <div class="form__group">
                 <label class="form__label">Título</label>
                 <p id="error-titulo" class="form__error"></p>
                 <input type="text" id="titulo" class="form__input">
@@ -37,11 +40,25 @@
                     <option value="false">En Préstamo / No Disponible</option>
                 </select>
             </div>
+            <div class="form__group">
+                <label class="form__label">Sinopsis</label>
+                <textarea id="sinopsis" class="form__input"></textarea>
+            </div>
+
+            <div class="form__group">
+                <label class="form__label">Cambiar Imagen</label>
+                <img id="current-image" src="" alt="Imagen actual"
+                    style="max-width: 200px; display: block; margin-bottom: 10px; border-radius: 5px; display: none;">
+                <input type="file" id="imagen" accept="image/*">
+            </div>
+
 
             <button type="submit" id="btn-guardar" class="form__btn">Guardar Cambios</button>
-            <a href="dashboard.html" class="form__btn" style="background-color: #666; text-align: center; margin-top: 10px; display:block;">Cancelar</a>
+            <a href="dashboard.html" class="form__btn"
+                style="background-color: #666; text-align: center; margin-top: 10px; display:block;">Cancelar</a>
         </form>
     </div>
     <script src="../scripts/editar_libro.js"></script>
 </body>
+
 </html>

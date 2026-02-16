@@ -15,14 +15,26 @@ document.getElementById('btn-crear').addEventListener('click', async (e) => {
     if (!categoria) { mostrarError('error-categoria', 'La categoría es obligatoria'); hayErrores = true; }
     if (!anio) { mostrarError('error-anio', 'El año es obligatorio'); hayErrores = true; }
 
+    const imagen = document.getElementById('imagen').files[0];
+    if (!imagen) { mostrarError('error-imagen', 'La imagen es obligatoria'); hayErrores = true; }
+
     if (hayErrores) return;
+    const sinopsis = document.getElementById('sinopsis').value.trim();
+
+    const formData = new FormData();
+    formData.append("titulo", titulo);
+    formData.append("autor", autor);
+    formData.append("categoria", categoria);
+    formData.append("anio", anio);
+    formData.append("sinopsis", sinopsis);
+    formData.append("imagen", imagen);
+
 
     try {
         const response = await fetch(`${API_URL}/libros`, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
             credentials: 'include',
-            body: JSON.stringify({ titulo, autor, categoria, anio })
+            body: formData
         });
 
         if (response.ok) {
